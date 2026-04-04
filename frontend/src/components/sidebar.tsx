@@ -8,50 +8,44 @@ import
     UnstyledButton,
 } from "@mantine/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import
-{
-    faHouse,
-    faArrowRightArrowLeft,
-    faCreditCard,
-    faRightFromBracket,
-} from "@fortawesome/free-solid-svg-icons";
-
-const menuItems = [
-    { label: "Home", icon: faHouse, active: true },
-    { label: "Transaction", icon: faArrowRightArrowLeft },
-    { label: "Payment", icon: faCreditCard, badge: 12 },
-];
-
-const bottomItems = [
-    { label: "Log out", icon: faRightFromBracket },
-];
+import { bottomItems, menuItems } from "../helper/helper";
+import { useStore } from "../store/useStore";
 
 
-const SidebarItem = ( { label, icon, active }: any ) =>
-{
-    return (
-        <UnstyledButton
-            style={ {
-                width: "100%",
-                padding: "5px",
-                borderRadius: "10px",
-                backgroundColor: active ? "#eef0ff" : "transparent",
-                transition: "0.2s",
-            } }
-        >
-            <Group justify="space-between">
-                <Group gap="sm">
-                    <FontAwesomeIcon icon={ icon } size="xs" />
-                    <Text size="xs">{ label }</Text>
-                </Group>
-            </Group>
-        </UnstyledButton>
-    );
-};
-
-// Sidebar Component
 const Sidebar = () =>
 {
+
+
+    const SidebarItem = ( { label, icon, value }: any ) =>
+    {
+        const activePage = useStore( ( s ) => s.activePage );
+        const setActivePage = useStore( ( s ) => s.setActivePage );
+
+        const isActive = activePage === value;
+
+
+        return (
+            <UnstyledButton
+                onClick={ () => setActivePage( value ) }
+                style={ {
+                    width: "100%",
+                    padding: "5px",
+                    borderRadius: "10px",
+                    backgroundColor: isActive ? "#eef0ff" : "transparent",
+                    transition: "0.2s",
+                } }
+
+            >
+                <Group justify="space-between">
+                    <Group gap="sm">
+                        <FontAwesomeIcon icon={ icon } size="xs" />
+                        <Text size="xs">{ label }</Text>
+                    </Group>
+                </Group>
+            </UnstyledButton>
+        );
+    };
+
     return (
         <Box
             w="100%"

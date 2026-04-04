@@ -75,4 +75,5 @@ export default defineConfig([
 
 Install the Mantine for the React UI framework.
 Install the Font Awesome for the Icons.
-Install the Mantine chart - donut chart
+Install the Mantine chart - donut chart,line chart
+INstall the zustand - State Management

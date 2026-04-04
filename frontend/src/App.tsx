@@ -1,7 +1,7 @@
 import { AppShell } from '@mantine/core';
 import './App.css'
 import Sidebar from './components/sidebar';
-import Main from './components/main';
+import RenderComp from './components/renderComp';
 
 function App ()
 {
@@ -14,7 +14,7 @@ function App ()
       } }
     >
       <AppShell.Navbar p={ 5 }><Sidebar /></AppShell.Navbar>
-      <AppShell.Main h="100%" ><Main /></AppShell.Main>
+      <AppShell.Main h="100%" ><RenderComp /></AppShell.Main>
     </AppShell>
   )
 }

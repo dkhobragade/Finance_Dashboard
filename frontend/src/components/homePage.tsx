@@ -1,19 +1,16 @@
 import { Box, Container, Grid } from "@mantine/core"
-import { Header } from "./header"
 import StartBox from "./startBox"
 import Tranasation from "./tranasation"
 import CreditScore from "./creditScore"
 import IncomeExpense from "./incomeExpense"
 import { summaryData } from "../data/data"
 
-const Main = () =>
+const HomePage = () =>
 {
     return <Container strategy="block" w="100%" h="100vh" size="100%"
         style={ { borderTopLeftRadius: '25px', borderBottomLeftRadius: '25px' } }
     >
         <Box>
-            <Header />
-            <br />
             <Grid>
                 <Grid.Col span={ 9 }>
                     <Grid>
@@ -39,4 +36,4 @@ const Main = () =>
 
 }
 
-export default Main
+export default HomePage

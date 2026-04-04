@@ -1,78 +1,22 @@
 import { faWallet, faMoneyCheck, faDollarSign } from "@fortawesome/free-solid-svg-icons";
 
 export const transactions = [
-  {
-    id: 1,
-    name: "Apple Store",
-    time: "10 min ago",
-    amount: -129.99,
-    logo: "https://logo.clearbit.com/apple.com",
-  },
-  {
-    id: 2,
-    name: "Salary",
-    time: "1 hr ago",
-    amount: 2500.0,
-    logo: "https://logo.clearbit.com/stripe.com",
-  },
-  {
-    id: 3,
-    name: "Amazon",
-    time: "2 hr ago",
-    amount: -89.5,
-    logo: "https://logo.clearbit.com/amazon.com",
-  },
-  {
-    id: 4,
-    name: "Netflix",
-    time: "3 hr ago",
-    amount: -15.99,
-    logo: "https://logo.clearbit.com/netflix.com",
-  },
-  {
-    id: 5,
-    name: "Freelance Payment",
-    time: "5 hr ago",
-    amount: 320.0,
-    logo: "https://logo.clearbit.com/paypal.com",
-  },
-  {
-    id: 6,
-    name: "Uber",
-    time: "6 hr ago",
-    amount: -22.4,
-    logo: "https://logo.clearbit.com/uber.com",
-  },
-  {
-    id: 7,
-    name: "Swiggy",
-    time: "8 hr ago",
-    amount: -18.75,
-    logo: "https://logo.clearbit.com/swiggy.com",
-  },
-  {
-    id: 8,
-    name: "Electricity Bill",
-    time: "12 hr ago",
-    amount: -75.2,
-    logo: "https://logo.clearbit.com/tesla.com",
-  },
-  {
-    id: 9,
-    name: "Gym Membership",
-    time: "1 day ago",
-    amount: -45.0,
-    logo: "https://logo.clearbit.com/nike.com",
-  },
-  {
-    id: 10,
-    name: "Stock Dividend",
-    time: "1 day ago",
-    amount: 150.0,
-    logo: "https://logo.clearbit.com/nasdaq.com",
-  },
+  { id: 1, name: "Apple Store", time: "10 min ago", amount: -129.99, logo: "https://logo.clearbit.com/apple.com" },
+  { id: 2, name: "Salary", time: "1 hr ago", amount: 2500, logo: "https://logo.clearbit.com/stripe.com" },
+  { id: 3, name: "Amazon", time: "2 hr ago", amount: -89.5, logo: "https://logo.clearbit.com/amazon.com" },
+  { id: 4, name: "Netflix", time: "3 hr ago", amount: -15.99, logo: "https://logo.clearbit.com/netflix.com" },
+  { id: 5, name: "Freelance Payment", time: "5 hr ago", amount: 320, logo: "https://logo.clearbit.com/paypal.com" },
+  { id: 6, name: "Uber", time: "6 hr ago", amount: -22.4, logo: "https://logo.clearbit.com/uber.com" },
+  { id: 7, name: "Swiggy", time: "8 hr ago", amount: -18.75, logo: "https://logo.clearbit.com/swiggy.com" },
+  { id: 8, name: "Electricity Bill", time: "12 hr ago", amount: -75.2, logo: "https://logo.clearbit.com/tesla.com" },
+  { id: 9, name: "Gym Membership", time: "1 day ago", amount: -45.0, logo: "https://logo.clearbit.com/nike.com" },
+  { id: 10, name: "Stock Dividend", time: "1 day ago", amount: 150.0, logo: "https://logo.clearbit.com/nasdaq.com" },
+  { id: 11, name: "Zomato", time: "2 days ago", amount: -25.6, logo: "https://logo.clearbit.com/zomato.com" },
+  { id: 12, name: "Google Ads", time: "2 days ago", amount: -120.0, logo: "https://logo.clearbit.com/google.com" },
+  { id: 13, name: "Upwork", time: "3 days ago", amount: 540.0, logo: "https://logo.clearbit.com/upwork.com" },
+  { id: 14, name: "Spotify", time: "3 days ago", amount: -9.99, logo: "https://logo.clearbit.com/spotify.com" },
+  { id: 15, name: "Flipkart", time: "4 days ago", amount: -210.75, logo: "https://logo.clearbit.com/flipkart.com" },
 ];
-
 
 
 export const creditData = [

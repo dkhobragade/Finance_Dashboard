@@ -40,6 +40,7 @@ const CreditScore = () =>
                     thickness={ 18 }
                     // tooltipDataSource="segment"
                     paddingAngle={ 2 }
+                    withTooltip={ false }
                     startAngle={ 180 }
                     endAngle={ 0 }
                     chartLabel={ 900 }
