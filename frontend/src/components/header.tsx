@@ -9,7 +9,7 @@ export const Header = () =>
                     <Text>
                         Welcome back
                     </Text>
-                    <Text size="xs" >
+                    <Text size="xs" fw={ 700 } >
                         Welcome to dashboard
                     </Text>
 
