@@ -73,4 +73,5 @@ export default defineConfig([
 ```
 
 
-Install the MUI for the React UI framework.
+Install the Mantine for the React UI framework.
+Install the Font Awesome for the Icons.
