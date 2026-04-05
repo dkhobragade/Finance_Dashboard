@@ -31,7 +31,7 @@ const TransactionItem = ( { name, time, amount }: any ) =>
 
 const Transaction = () =>
 {
-    const transactions = useStore( ( s ) => s.transactions ); // ✅ FIX
+    const transactions = useStore( ( s ) => s.transactions );
 
     return (
         <Box w="100%" p={ 10 } bdrs={ 10 } bd="1px solid #e5e5e5">

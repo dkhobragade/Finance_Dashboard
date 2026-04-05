@@ -4,7 +4,7 @@ import { useStore } from "../store/useStore";
 export const Header = () =>
 {
     const activePage = useStore( ( s ) => s.activePage );
-    const isAdmin = useStore( ( s ) => s.isAdmin ); // 👈 get role
+    const isAdmin = useStore( ( s ) => s.isAdmin );
 
     const renderCurrentPageName = () =>
     {

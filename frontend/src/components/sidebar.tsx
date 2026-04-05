@@ -48,7 +48,6 @@ const Sidebar = () =>
         );
     };
 
-    // 👇 filter menu based on admin
     const filteredMenuItems = menuItems.filter( ( item ) =>
     {
         if ( item.value === "payment" && !isAdmin ) return false;
