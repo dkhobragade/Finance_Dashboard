@@ -8,6 +8,7 @@ import
     Text,
 } from "@mantine/core";
 import { useStore } from "../store/useStore";
+import { useMantineTheme } from "@mantine/core";
 
 const TransactionItem = ( { name, time, amount }: any ) =>
 {
@@ -32,9 +33,10 @@ const TransactionItem = ( { name, time, amount }: any ) =>
 const Transaction = () =>
 {
     const transactions = useStore( ( s ) => s.transactions );
+    const theme = useMantineTheme();
 
     return (
-        <Box w="100%" p={ 10 } bdrs={ 10 } bd="1px solid #e5e5e5">
+        <Box w="100%" p={ 10 } bdrs={ 10 } bd={ `1px solid ${ theme.colors.gray[ 3 ] }` }>
             <Text size="xs" fw={ 700 }>
                 Recent Transaction
             </Text>

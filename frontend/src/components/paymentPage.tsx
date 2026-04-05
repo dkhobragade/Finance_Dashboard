@@ -13,12 +13,14 @@ import
 import { useState } from "react";
 import { recentContacts } from "../data/data";
 import { useStore } from "../store/useStore";
+import { useMantineTheme } from "@mantine/core";
 
 const PaymentPage = () =>
 {
     const [ selectedUser, setSelectedUser ] = useState<any>( null );
     const [ amount, setAmount ] = useState<number | string>( "" );
     const [ success, setSuccess ] = useState( "" );
+    const theme = useMantineTheme();
 
     const addTransaction = useStore( ( s ) => s.addTransaction );
 
@@ -53,7 +55,7 @@ const PaymentPage = () =>
             </Text>
 
             <Group align="flex-start" grow>
-                <Box p="md" bd="1px solid #e5e5e5" bdrs={ 10 }>
+                <Box p="md" bd={ `1px solid ${ theme.colors.gray[ 3 ] }` } bdrs={ 10 }>
                     <Stack>
                         <Text size="sm" fw={ 600 }>
                             Transfer Details
@@ -98,7 +100,7 @@ const PaymentPage = () =>
                     </Stack>
                 </Box>
 
-                <Box p="md" bd="1px solid #e5e5e5" bdrs={ 10 } w={ 250 }>
+                <Box p="md" bd={ `1px solid ${ theme.colors.gray[ 3 ] }` } bdrs={ 10 } w={ 250 }>
                     <Text size="sm" fw={ 600 } mb="sm">
                         Recent Contacts
                     </Text>

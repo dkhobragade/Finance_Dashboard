@@ -11,7 +11,7 @@ const Root = () =>
   const colorScheme = useStore( ( s ) => s.colorScheme );
 
   return (
-    <MantineProvider defaultColorScheme={ colorScheme }>
+    <MantineProvider forceColorScheme={ colorScheme }>
       <App />
     </MantineProvider>
   );

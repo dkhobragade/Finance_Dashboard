@@ -1,8 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Box, Group, Text } from "@mantine/core";
+import { useMantineTheme } from "@mantine/core";
 
 const StartBox = ( { title, amount, change, icon }: any ) =>
 {
+    const theme = useMantineTheme();
+
     return (
         <Box
             h={ 120 }
@@ -10,7 +13,7 @@ const StartBox = ( { title, amount, change, icon }: any ) =>
             p={ 12 }
             bdrs={ 10 }
             style={ {
-                border: "1px solid #e5e5e5",
+                border: `1px solid ${ theme.colors.gray[ 3 ] }`,
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",

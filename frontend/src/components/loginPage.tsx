@@ -21,8 +21,10 @@ const LoginPage = () =>
     const [ password, setPassword ] = useState( "" );
     const [ error, setError ] = useState( "" );
 
-    const handleLogin = () =>
+    const handleLogin = ( e?: any ) =>
     {
+        if ( e ) e.preventDefault();
+
         if ( !email || !password )
         {
             setError( "Email and Password cannot be empty" );
@@ -49,53 +51,55 @@ const LoginPage = () =>
                 alignItems: "center",
             } }
         >
-            <Stack w={ 300 } gap="md">
-                <Box>
-                    <Text fw={ 700 } size="lg">
-                        Welcome back 👋
-                    </Text>
-                    <Text size="sm" c="dimmed">
-                        Start managing your finances faster and better
-                    </Text>
-                </Box>
+            <form onSubmit={ handleLogin }>
+                <Stack w={ 300 } gap="md">
+                    <Box>
+                        <Text fw={ 700 } size="lg">
+                            Welcome back 👋
+                        </Text>
+                        <Text size="sm" c="dimmed">
+                            Start managing your finances faster and better
+                        </Text>
+                    </Box>
 
-                <TextInput
-                    size="xs"
-                    label="Email"
-                    placeholder="Enter email"
-                    value={ email }
-                    onChange={ ( e ) => setEmail( e.currentTarget.value ) }
-                />
+                    <TextInput
+                        size="xs"
+                        label="Email"
+                        placeholder="Enter email"
+                        value={ email }
+                        onChange={ ( e ) => setEmail( e.currentTarget.value ) }
+                    />
 
-                <PasswordInput
-                    size="xs"
-                    label="Password"
-                    placeholder="Enter password"
-                    value={ password }
-                    onChange={ ( e ) => setPassword( e.currentTarget.value ) }
-                />
+                    <PasswordInput
+                        size="xs"
+                        label="Password"
+                        placeholder="Enter password"
+                        value={ password }
+                        onChange={ ( e ) => setPassword( e.currentTarget.value ) }
+                    />
 
-                { error && (
-                    <Text size="xs" c="red">
-                        { error }
-                    </Text>
-                ) }
+                    { error && (
+                        <Text size="xs" c="red">
+                            { error }
+                        </Text>
+                    ) }
 
-                <Button size="xs" fullWidth onClick={ handleLogin }>
-                    Login
-                </Button>
+                    <Button size="xs" fullWidth type="submit">
+                        Login
+                    </Button>
 
-                <Divider my="xs" label="or" labelPosition="center" />
+                    <Divider my="xs" label="or" labelPosition="center" />
 
-                <Button
-                    size="xs"
-                    leftSection={ <Image src={ googleIcon } w={ 20 } h={ 20 } /> }
-                    fullWidth
-                    variant="default"
-                >
-                    Google
-                </Button>
-            </Stack>
+                    <Button
+                        size="xs"
+                        leftSection={ <Image src={ googleIcon } w={ 20 } h={ 20 } /> }
+                        fullWidth
+                        variant="default"
+                    >
+                        Google
+                    </Button>
+                </Stack>
+            </form>
         </Box>
     );
 };

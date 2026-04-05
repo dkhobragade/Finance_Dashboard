@@ -2,10 +2,12 @@ import { LineChart } from "@mantine/charts";
 import { incomeExpensedata } from "../data/data";
 import { Box, Text, SegmentedControl, Group } from "@mantine/core";
 import { useState } from "react";
+import { useMantineTheme } from "@mantine/core";
 
 const IncomeExpense = () =>
 {
     const [ filter, setFilter ] = useState( "7d" );
+    const theme = useMantineTheme();
 
     const getFilteredData = () =>
     {
@@ -15,7 +17,7 @@ const IncomeExpense = () =>
     };
 
     return (
-        <Box w="100%" bd="1px solid #e5e5e5" p={ 10 } bg="white" bdrs={ 10 }>
+        <Box w="100%" bd={ `1px solid ${ theme.colors.gray[ 3 ] }` } p={ 10 } bdrs={ 10 }>
             <Group justify="space-between" mb="xs">
                 <Text fw={ 600 } size="xs" >Income vs Expense</Text>
                 <SegmentedControl

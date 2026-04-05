@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { bottomItems, menuItems } from "../helper/helper";
 import { useStore } from "../store/useStore";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { useMantineTheme } from "@mantine/core";
 
 
 const Sidebar = () =>
@@ -19,6 +20,7 @@ const Sidebar = () =>
     const isAdmin = useStore( ( s ) => s.isAdmin );
     const colorScheme = useStore( ( s ) => s.colorScheme );
     const toggleColorScheme = useStore( ( s ) => s.toggleColorScheme );
+    const theme = useMantineTheme();
 
     const SidebarItem = ( { label, icon, value }: any ) =>
     {
@@ -34,7 +36,7 @@ const Sidebar = () =>
                     width: "100%",
                     padding: "5px",
                     borderRadius: "10px",
-                    backgroundColor: isActive ? "#eef0ff" : "transparent",
+                    backgroundColor: isActive ? theme.colors.blue[ 0 ] : "transparent",
                     transition: "0.2s",
                 } }
             >

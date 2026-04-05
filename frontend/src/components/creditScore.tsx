@@ -1,16 +1,19 @@
 import { DonutChart } from "@mantine/charts";
 import { Box, Text, Stack } from "@mantine/core";
 import { creditData } from "../data/data";
+import { useMantineTheme } from "@mantine/core";
 
 const CreditScore = () =>
 {
+    const theme = useMantineTheme();
+
     return (
         <Box
             bdrs={ 20 }
             p={ 10 }
             w="100%"
             h={ 150 }
-            bd="1px solid #e5e5e5"
+            bd={ `1px solid ${ theme.colors.gray[ 3 ] }` }
             style={ {
                 display: "flex",
                 flexDirection: "column",

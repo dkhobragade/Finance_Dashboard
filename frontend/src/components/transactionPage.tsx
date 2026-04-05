@@ -15,12 +15,14 @@ import
 } from "@fortawesome/free-solid-svg-icons";
 import { useStore } from "../store/useStore";
 import { SegmentedControl } from "@mantine/core";
+import { useMantineTheme } from "@mantine/core";
 
 
 const TransactionPage = () =>
 {
     const filter = useStore( ( s ) => s.filter );
     const setFilter = useStore( ( s ) => s.setFilter );
+    const theme = useMantineTheme();
 
     const transactions = useStore( ( s ) => s.transactions );
 
@@ -84,7 +86,7 @@ const TransactionPage = () =>
                 <Box
                     p="md"
                     bdrs={ 10 }
-                    bd="1px solid #e5e5e5"
+                    bd={ `1px solid ${ theme.colors.gray[ 3 ] }` }
                     style={ {
                         cursor: 'pointer',
                         transition: "all 0.25s ease",
@@ -114,7 +116,7 @@ const TransactionPage = () =>
                 <Box
                     p="md"
                     bdrs={ 10 }
-                    bd="1px solid #e5e5e5"
+                    bd={ `1px solid ${ theme.colors.gray[ 3 ] }` }
                     style={ {
                         cursor: 'pointer',
                         transition: "all 0.25s ease",
