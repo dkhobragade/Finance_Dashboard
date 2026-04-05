@@ -10,6 +10,8 @@ A modern, responsive finance dashboard web application built with React and Type
 - **Dynamic Transaction Management**: Add and store transactions in global state
 - **Transaction Filtering**: Filter transactions by all, income, or expense categories
 - **Dashboard Overview**: Display recent transactions and financial summaries
+- **Dark Mode Support**: Added a persistent light/dark theme toggle across the app
+- **Responsive Improvements**: Adjusted layout and component behavior for smaller screen sizes
 
 ## Tech Stack
 
