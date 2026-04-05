@@ -86,3 +86,13 @@ export const incomeExpensedata = [
   { date: "Mar 29", income: 7100, expense: 6400 },
   { date: "Mar 30", income: 4900, expense: 5100 },
 ];
+
+
+
+export const recentContacts = [
+  { id: 1, name: "John Doe", email: "john@gmail.com", avatar: "https://i.pravatar.cc/100?img=1" },
+  { id: 2, name: "Sarah Lee", email: "sarah@gmail.com", avatar: "https://i.pravatar.cc/100?img=2" },
+  { id: 3, name: "Alex Smith", email: "alex@gmail.com", avatar: "https://i.pravatar.cc/100?img=3" },
+  { id: 4, name: "Emma Watson", email: "emma@gmail.com", avatar: "https://i.pravatar.cc/100?img=4" },
+  { id: 5, name: "Michael Brown", email: "michael@gmail.com", avatar: "https://i.pravatar.cc/100?img=5" },
+];

@@ -7,7 +7,6 @@ import
     ScrollArea,
     SimpleGrid,
 } from "@mantine/core";
-import { transactions } from "../data/data";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import
 {
@@ -17,10 +16,13 @@ import
 import { useStore } from "../store/useStore";
 import { SegmentedControl } from "@mantine/core";
 
+
 const TransactionPage = () =>
 {
     const filter = useStore( ( s ) => s.filter );
     const setFilter = useStore( ( s ) => s.setFilter );
+
+    const transactions = useStore( ( s ) => s.transactions );
 
     const totalIncome = transactions
         .filter( ( t ) => t.amount > 0 )

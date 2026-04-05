@@ -1,15 +1,20 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
-import '@mantine/core/styles.css';
-import '@mantine/charts/styles.css';
-import { MantineProvider } from '@mantine/core';
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.tsx";
+import "@mantine/core/styles.css";
+import "@mantine/charts/styles.css";
+import { MantineProvider } from "@mantine/core";
+import { useStore } from "./store/useStore.ts";
 
-createRoot( document.getElementById( 'root' )! ).render(
-  <StrictMode>
-    <MantineProvider>
+const Root = () =>
+{
+  const colorScheme = useStore( ( s ) => s.colorScheme );
+
+  return (
+    <MantineProvider defaultColorScheme={ colorScheme }>
       <App />
     </MantineProvider>
-  </StrictMode>,
-)
+  );
+};
+
+createRoot( document.getElementById( "root" )! ).render( <Root /> );

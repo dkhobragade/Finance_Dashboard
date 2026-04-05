@@ -10,11 +10,15 @@ import
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { bottomItems, menuItems } from "../helper/helper";
 import { useStore } from "../store/useStore";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 
 const Sidebar = () =>
 {
-
+    const logout = useStore( ( s ) => s.logout );
+    const isAdmin = useStore( ( s ) => s.isAdmin );
+    const colorScheme = useStore( ( s ) => s.colorScheme );
+    const toggleColorScheme = useStore( ( s ) => s.toggleColorScheme );
 
     const SidebarItem = ( { label, icon, value }: any ) =>
     {
@@ -22,7 +26,6 @@ const Sidebar = () =>
         const setActivePage = useStore( ( s ) => s.setActivePage );
 
         const isActive = activePage === value;
-
 
         return (
             <UnstyledButton
@@ -34,7 +37,6 @@ const Sidebar = () =>
                     backgroundColor: isActive ? "#eef0ff" : "transparent",
                     transition: "0.2s",
                 } }
-
             >
                 <Group justify="space-between">
                     <Group gap="sm">
@@ -45,6 +47,13 @@ const Sidebar = () =>
             </UnstyledButton>
         );
     };
+
+    // 👇 filter menu based on admin
+    const filteredMenuItems = menuItems.filter( ( item ) =>
+    {
+        if ( item.value === "payment" && !isAdmin ) return false;
+        return true;
+    } );
 
     return (
         <Box
@@ -64,7 +73,7 @@ const Sidebar = () =>
                     </Text>
 
                     <Stack gap="xs">
-                        { menuItems.map( ( item, i ) => (
+                        { filteredMenuItems.map( ( item, i ) => (
                             <SidebarItem key={ i } { ...item } />
                         ) ) }
                     </Stack>
@@ -72,13 +81,39 @@ const Sidebar = () =>
 
                 <Divider />
             </Stack>
+
             <Stack gap="xs">
+                <UnstyledButton
+                    onClick={ toggleColorScheme }
+                    style={ { padding: "5px" } }
+                >
+                    <Group gap="sm">
+                        <FontAwesomeIcon
+                            icon={ colorScheme === "dark" ? faSun : faMoon }
+                            size="xs"
+                        />
+                        <Text size="xs">
+                            { colorScheme === "dark" ? "Light Mode" : "Dark Mode" }
+                        </Text>
+                    </Group>
+                </UnstyledButton>
+
                 { bottomItems.map( ( item, i ) => (
-                    <SidebarItem key={ i } { ...item } />
+                    <UnstyledButton
+                        key={ i }
+                        onClick={ logout }
+                        style={ { padding: "5px" } }
+                    >
+                        <Group gap="sm">
+                            <FontAwesomeIcon icon={ item.icon } size="xs" />
+                            <Text size="xs">{ item.label }</Text>
+                        </Group>
+                    </UnstyledButton>
                 ) ) }
             </Stack>
         </Box>
     );
 };
+
 
 export default Sidebar;

@@ -2,9 +2,17 @@ import { AppShell } from '@mantine/core';
 import './App.css'
 import Sidebar from './components/sidebar';
 import RenderComp from './components/renderComp';
+import { useStore } from './store/useStore';
+import LoginPage from './components/loginPage';
 
 function App ()
 {
+  const isAuthenticated = useStore( ( s ) => s.isAuthenticated );
+
+  if ( !isAuthenticated )
+  {
+    return <LoginPage />;
+  }
 
   return (
     <AppShell
