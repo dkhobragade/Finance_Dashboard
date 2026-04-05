@@ -9,8 +9,10 @@ import
     Button,
     Avatar,
     ScrollArea,
+    SimpleGrid,
 } from "@mantine/core";
 import { useState } from "react";
+import { useMediaQuery } from "@mantine/hooks";
 import { recentContacts } from "../data/data";
 import { useStore } from "../store/useStore";
 import { useMantineTheme } from "@mantine/core";
@@ -21,6 +23,7 @@ const PaymentPage = () =>
     const [ amount, setAmount ] = useState<number | string>( "" );
     const [ success, setSuccess ] = useState( "" );
     const theme = useMantineTheme();
+    const isMobile = useMediaQuery( '(max-width: 768px)' );
 
     const addTransaction = useStore( ( s ) => s.addTransaction );
 
@@ -54,7 +57,7 @@ const PaymentPage = () =>
                 Send Money
             </Text>
 
-            <Group align="flex-start" grow>
+            <SimpleGrid cols={ isMobile ? 1 : 2 } spacing="md">
                 <Box p="md" bd={ `1px solid ${ theme.colors.gray[ 3 ] }` } bdrs={ 10 }>
                     <Stack>
                         <Text size="sm" fw={ 600 }>
@@ -100,7 +103,7 @@ const PaymentPage = () =>
                     </Stack>
                 </Box>
 
-                <Box p="md" bd={ `1px solid ${ theme.colors.gray[ 3 ] }` } bdrs={ 10 } w={ 250 }>
+                <Box p="md" bd={ `1px solid ${ theme.colors.gray[ 3 ] }` } bdrs={ 10 }>
                     <Text size="sm" fw={ 600 } mb="sm">
                         Recent Contacts
                     </Text>
@@ -137,7 +140,7 @@ const PaymentPage = () =>
                         </Stack>
                     </ScrollArea>
                 </Box>
-            </Group>
+            </SimpleGrid>
         </Box>
     );
 };

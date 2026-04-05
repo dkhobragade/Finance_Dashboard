@@ -7,6 +7,7 @@ import
     ScrollArea,
     SimpleGrid,
 } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import
 {
@@ -20,6 +21,7 @@ import { useMantineTheme } from "@mantine/core";
 
 const TransactionPage = () =>
 {
+    const isMobile = useMediaQuery( '(max-width: 768px)' );
     const filter = useStore( ( s ) => s.filter );
     const setFilter = useStore( ( s ) => s.setFilter );
     const theme = useMantineTheme();
@@ -82,7 +84,7 @@ const TransactionPage = () =>
     return (
         <Box p="md">
 
-            <SimpleGrid cols={ 2 } mb="md">
+            <SimpleGrid cols={ isMobile ? 1 : 2 } mb="md">
                 <Box
                     p="md"
                     bdrs={ 10 }
@@ -144,7 +146,7 @@ const TransactionPage = () =>
                 </Box>
             </SimpleGrid>
 
-            <Group justify="space-between" mb="md">
+            <Group justify="space-between" mb="md" style={ { flexDirection: isMobile ? "column" : "row" } }>
                 <Text fw={ 700 }>Transactions</Text>
 
                 <SegmentedControl

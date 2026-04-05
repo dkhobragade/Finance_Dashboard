@@ -1,10 +1,12 @@
 import { Box, Grid, Flex, Text, Divider } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { useStore } from "../store/useStore";
 
 export const Header = () =>
 {
     const activePage = useStore( ( s ) => s.activePage );
     const isAdmin = useStore( ( s ) => s.isAdmin );
+    const isMobile = useMediaQuery( '(max-width: 768px)' );
 
     const renderCurrentPageName = () =>
     {
@@ -21,14 +23,14 @@ export const Header = () =>
     return (
         <Box>
             <Grid p={ 2 }>
-                <Grid.Col span={ 3 }>
+                <Grid.Col span={ isMobile ? 12 : 3 }>
                     <Text>Welcome back</Text>
                     <Text size="xs" fw={ 700 }>
                         Welcome to { renderCurrentPageName() }
                     </Text>
                 </Grid.Col>
 
-                <Grid.Col span={ 9 } align="center">
+                <Grid.Col span={ isMobile ? 12 : 9 } align="center">
                     <Flex justify="flex-end" align="center" gap="md">
                         <Box
                             style={ {

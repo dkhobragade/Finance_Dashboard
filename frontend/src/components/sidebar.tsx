@@ -59,12 +59,13 @@ const Sidebar = () =>
     return (
         <Box
             w="100%"
-            h="100vh"
+            h="100%"
             p="xs"
             style={ {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
+                minHeight: "100%",
             } }
         >
             <Stack gap="md">
